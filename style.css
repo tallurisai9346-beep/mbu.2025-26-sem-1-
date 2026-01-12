@@ -1,0 +1,298 @@
+/* ===== BASE ===== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #f9f5f2;
+  color: #333;
+}
+
+/* ===== HERO SECTION ===== */
+.hero {
+  position: relative;
+  height: 60vh;
+  overflow: hidden;
+}
+
+.hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.75);
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+}
+
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  transform: translateY(-50%);
+  color: #fff;
+}
+
+.hero-content h1 {
+  font-size: 42px;
+  line-height: 1.2;
+  margin: 0 0 10px;
+}
+
+.hero-content h1 span {
+  color: #ffcc66;
+  font-size: 18px;
+  letter-spacing: 2px;
+}
+
+.hero-content p {
+  font-size: 15px;
+  max-width: 420px;
+  margin-bottom: 20px;
+}
+
+.hero-content button {
+  background: #ffcc66;
+  color: #8b0000;
+  border: none;
+  padding: 12px 26px;
+  font-size: 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* ===== HEADER ===== */
+.header {
+  background: #8b0000;
+  color: #ffcc66;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  padding: 15px;
+}
+
+.header img {
+  height: 45px;
+}
+
+/* ===== CONTAINER ===== */
+.container {
+  max-width: 600px;
+  margin: 40px auto;
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 12px 35px rgba(0,0,0,0.08);
+}
+
+.container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #8b0000;
+}
+
+/* ===== INPUTS ===== */
+.input-box {
+  display: flex;
+  gap: 10px;
+}
+
+.input-box input,
+.input-box select {
+  flex: 1;
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.input-box input:focus,
+.input-box select:focus {
+  outline: none;
+  border-color: #8b0000;
+}
+
+/* ===== BUTTON ===== */
+button.action {
+  width: 100%;
+  margin-top: 15px;
+  padding: 12px;
+  background: #ffcc66;
+  color: #8b0000;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 15px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+button.action:hover {
+  transform: translateY(-2px);
+}
+
+/* ===== LOADER ===== */
+.loader {
+  display: none;
+  margin-top: 20px;
+  text-align: center;
+  font-weight: bold;
+  color: #8b0000;
+}
+
+/* ===== ERROR ===== */
+#errorBox {
+  display: none;
+  background: #ffeaea;
+  color: #a00000;
+  padding: 10px;
+  margin-top: 15px;
+  border-radius: 6px;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* ===== RESULT ===== */
+.result {
+  display: none;
+  margin-top: 20px;
+}
+
+.result p {
+  margin: 6px 0;
+}
+
+/* ===== TABLE ===== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+th {
+  background: #8b0000;
+  color: #ffcc66;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.pass {
+  color: green;
+  font-weight: bold;
+}
+
+.fail {
+  color: red;
+  font-weight: bold;
+}
+
+/* ===== STATUS & CGPA ===== */
+.status {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.cgpa {
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 8px;
+}
+
+/* ================= REVALUATION ================= */
+.reval-warning {
+  margin-top: 15px;
+  color: #c0392b;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+#revalBtn {
+  margin-top: 10px;
+  padding: 10px 18px;
+  background: #d63031;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#revalBtn:hover {
+  background: #b71c1c;
+}
+
+/* ================= REVALUATION TROLL (CONTROLLED) ================= */
+.reval-troll {
+  position: fixed;
+  bottom: -300px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 220px;
+  z-index: 9999;
+  display: none;
+  opacity: 0;
+}
+
+.reval-troll.animate {
+  display: block;
+  animation: trollUp 2.5s ease-out forwards;
+}
+
+@keyframes trollUp {
+  0% {
+    bottom: -300px;
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  100% {
+    bottom: 40%;
+    opacity: 1;
+  }
+}
+
+/* ===== TROLL SECTION ===== */
+.troll-section {
+  display: none;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.troll-section img {
+  max-width: 100%;
+  border-radius: 12px;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  text-align: center;
+  font-size: 13px;
+  color: #777;
+  margin: 25px 0;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 600px) {
+  .hero-content h1 {
+    font-size: 32px;
+  }
+  .input-box {
+    flex-direction: column;
+  }
+}
